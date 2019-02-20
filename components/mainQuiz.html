@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MathQuizGame</title>
+    <link rel="stylesheet" href="../style/main.css" type="text/css">
+    <link rel="stylesheet" href="../style/custom.css" type="text/css">
+</head>
+
+<body>
+    <div class="w3-container mainContainer" >
+        <div class="w3-row header">
+            <div class="w3-col m12 l12 ">
+                <span class="heading">Name :</span>
+                <span class="userTab" id="name"></span>
+                <span class="heading" >Score :</span>
+                <span class="userTab" id="score">0</span>
+                <span class="heading">Level :</span>
+                <span class="userTab" id="level">1</span>
+                <span class="heading" id="chance">Chances:</span>
+                <span class="heading" id="chanceDisplay">3</span>
+                <span class="heading" ></span>
+                
+               <a href="../index.html"><span class="heading">Main Menu</span></a>
+               <a href="../components/feedback.html"><span class="heading">Feedback Us</span></a>
+                <a href="../components/about.html"><span class="heading">About Us</span></a>
+                
+            </div>
+        </div>
+        <p></p>
+        <div class="w3-row">
+            <div class="w3-col m3 l3 suggestions ">
+                  <h4 id="result" class="result"></h4>
+                  <h4 id="correctAns" class="result"></h4>
+                <p></p>
+                <div id="chanceBox">
+                    <p ></p>
+                    <p ></p>
+                    <p id="chanceImgXii"></p>
+                </div>
+            </div>
+            <div class="w3-col m6 l6  w3-panel w3-round-xlarge quizBox" id="quizOt">
+
+                <table class="w3-table">
+                    <tr>
+                        <td>
+                            <p id="quizHeadingX"></p>
+                            <h2 id="displayQuiz" class="displayQuiz">WelCome!</h2>
+                        </td>
+                        
+                    </tr>
+                    <tr>
+                        
+                        <td>
+                                <p id="quizHeadingXi"></p>
+                                <div id="displayButton"></div>
+                                
+                        </td>
+                                
+                    </tr>
+
+                </table>
+            </div>
+            <div class="w3-col m6 l3 w3-border-deep-orange">
+                <p></p>
+            </div>
+        </div>
+    </div>
+    <div class="footer">&copy;ISH2K19</div>
+
+    <script src="../script/quizHandler.js"></script>
+</body>
+
+</html>

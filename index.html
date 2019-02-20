@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <!-- Add to home screen for Chrome -->
+     <link rel="manifest" href="/manifest.json">
+
+     <!-- Add to home screen for Safari on iOS -->
+     <meta name="apple-mobile-web-app-capable" content="yes">
+     <meta name="apple-mobile-web-app-status-bar-style" content="black">
+     <meta name="apple-mobile-web-app-title" content="Weather PWA">
+     <link rel="apple-touch-icon" href="images/icons/icon-152x152.png">
+ 
+     <meta name="msapplication-TileImage" content="images/icons/icon-144x144.png">
+     <meta name="msapplication-TileColor" content="#2F3BA2">
+     <meta name="theme-color" content="#2F3BA2">
+ 
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MathQuizGame</title>
+    <link rel="stylesheet" href="./style/main.css" type="text/css">
+    <link rel="stylesheet" href="./style/custom.css" type="text/css">
+</head>
+
+<body>
+    <div class="w3-container mainContainer" >
+        <p></p>
+        <div class="w3-row">
+            <div class="w3-col m3 l3">
+                <p></p>
+            </div>
+            <div class="w3-col m6 l6  w3-panel w3-round-xlarge menueBox">
+
+                <table class="w3-table">
+                    <tr>
+                        Your Name:<br />
+                        <td><input type="text"  class="w3-input w3-border w3-round" id="playerName" placeholder="playerName" /></td>
+                        
+                    </tr>
+                    <tr>
+                        
+                        <td>
+                                Choose Your Strength:<br />
+                                <input class="w3-radio" type="radio" name="capacity" value="easy" checked>
+                                <label>Easy</label>
+                                
+                                <input class="w3-radio" type="radio" name="capacity" value="inter">
+                                <label>Intermediate</label>
+                                
+                                <input class="w3-radio" type="radio" name="capacity" value="Hard" >
+                                <label>Hard</label>
+                        </td>
+                                
+                    </tr>
+                    <tr>
+                            <td></td>
+                            <td><a href="./components/mainQuiz.html"><button class="w3-button w3-white w3-border w3-border-red w3-round-large" onclick="start()">GO!</button></a></td>                       
+                    </tr>
+                </table>
+            </div>
+            <div class="w3-col m6 l3 w3-border-deep-orange">
+                <p></p>
+            </div>
+        </div>
+
+
+
+    </div>
+    <div class="footer">&copy;ISH2K19</div>
+
+    <script src="./script/main.js"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>

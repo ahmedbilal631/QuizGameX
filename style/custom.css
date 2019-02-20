@@ -1,0 +1,106 @@
+
+/* For index page */
+.menueBox{
+    border: 2px, solid, black;
+    padding: 50px;
+    margin-top: 10%;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;  
+    font-weight: bold;
+    font-size: 150%;
+    color: white;
+}
+.menueBoxX{
+    border: 2px, solid, black;
+    padding: 50px;
+    margin-top: 5%;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;  
+    font-weight: bold;
+    font-size: 150%;
+    color: white;
+}
+body{
+    /* background-image: url('../images/main-bg.jpg'); */
+    /* background-repeat: no-repeat; */
+    background-color: darkorange;
+    background-size: 100%;  
+}
+.footer{
+    text-align: center;
+    font-weight: bold;
+    color: white;
+}
+/* ??????????????????????????????????????????????????? */
+
+/* ...................For mainQuizPage............ ....*/
+.displayQuiz{
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+    border-radius: 20%;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.quizBox{
+    border: 2px, solid, black;
+    padding: 20px;
+    margin-top: 4%;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;  
+    font-weight: bold;
+    font-size: 150%;
+    color: white;
+}
+.quizBtn{
+    margin-top: 1%;
+}
+.userBox{
+    border: 2px, solid, black;
+    padding: 50px;
+    /* margin-top: 5%; */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* height: 100%;   */
+    font-weight: bold;
+    font-size: 100%;
+    color: white;
+    text-align: left;
+}
+.header{
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.8);
+    height: 4em;
+    width: 100%;
+    margin-left: -1.2%;
+    
+}
+.heading{
+    color: white;
+    font-weight: bold;
+    margin-left: 0%;
+    padding: 1%;
+    /* border: 2px solid white; */
+}
+
+.userTab{
+    color: white;
+    font-weight: bold;
+    /* margin-left: 1%; */
+    /* padding: 2%; */
+    /* border: 2px solid white; */
+}
+.suggestions{
+    margin-top: 4%;
+}
+.result{
+    font-weight: bold;
+    color: red;
+    font-size: 150%;
+}
+.quizBtnX{
+    margin-top: 1%;
+    color: red;
+}
+.endNote{
+    text-align: center;
+}
