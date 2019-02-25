@@ -2,11 +2,11 @@
 var startbtn = document.getElementById("displayButton");
 var btnX = document.createElement("input");
 btnX.setAttribute("class", "quizBtn w3-button w3-block w3-white w3-border w3-border-red w3-round-large");
-btnX.setAttribute( "onclick", "removeStartBtn()");
-btnX.setAttribute( "onclick", "start()");
-btnX.setAttribute( "Value", "Play");
-btnX.setAttribute( "type", "button");
-btnX.setAttribute( "id", "startBtn");
+btnX.setAttribute("onclick", "removeStartBtn()");
+btnX.setAttribute("onclick", "start()");
+btnX.setAttribute("Value", "Play");
+btnX.setAttribute("type", "button");
+btnX.setAttribute("id", "startBtn");
 startbtn.appendChild(btnX);
 
 
@@ -34,8 +34,8 @@ console.log(score);
 
 ///////////////////////////////////////////////////////////////////
 ///////////..........ClearingStartBtns..................../////////
-function removeStartBtn(){
-    
+function removeStartBtn() {
+
     var removeBtn = document.getElementById("displayButton").innerHTML = "";
     // removeBtn.parentNode.removeChild(removeBtn);
 }
@@ -53,36 +53,84 @@ function questionDraw() {
     ans = 0;
     var pNum1 = Math.ceil(Math.random() * capacity);
     var pNum2 = Math.floor(Math.random() * capacity);
+
+    //Operator
+    var rid = Math.round(Math.random() * 10);
+    // var rid = 4;
+
+    if (rid == 1 || rid == 10) {
+        ans = pNum1 * pNum2;
+        // console.log(ans);
+        document.getElementById("displayQuiz").innerHTML = pNum1 + "x" + pNum2;
+    }
+    else if (rid == 2 || rid == 8) {
+        ans = pNum1 * pNum2;
+        // console.log(ans);
+        document.getElementById("displayQuiz").innerHTML = pNum1 + "x" + pNum2;
+    }
+    else if (rid == 3 || rid == 9 || rid == 4) {
+        ans = pNum1 - pNum2;
+        // console.log(ans);
+        document.getElementById("displayQuiz").innerHTML = pNum1 + "-" + pNum2;
+    }
+    else if (rid == 20) { 
+
+        var odd = [1, 3, 5, 7, 9,];
+        for (var i = 0; i <= odd.length; i++) {
+
+            if (pNum1 == odd[i]){
+                pNum1 = pNum1 + 1;
+            }
+            if (pNum2 == odd[i]){
+                pNum2 = pNum2 + 1;
+            }
+
+    }
+        if(pNum1 < pNum2){
+            var temp = pNum1;
+            pNum1 = pNum2;
+            pNum2 = temp;
+        }
+        if(pNum2 == 0){
+            pNum2 = 2;
+        }
+
+        ans = pNum1 / pNum2;
+        // console.log(ans);
+        document.getElementById("displayQuiz").innerHTML = pNum1 + "/" + pNum2;
+    }
+    else {
+        ans = pNum1 + pNum2;
+        // console.log(ans);
+        document.getElementById("displayQuiz").innerHTML = pNum1 + "+" + pNum2;
+    }
     // console.log(pNum1);
     // console.log(pNum2);
-    ans = pNum1 * pNum2;
-    // console.log(ans);
-    document.getElementById("displayQuiz").innerHTML = pNum1 + "x" + pNum2;
 }
 /////////////////////////////////////////////////////////////////
 
 
 ////////////...........ScoreCalculator.........///////////
 function calScore() {
-    if(capacity <= 50){
+    if (capacity <= 50) {
         score = score + 1;
     }
-    else if(capacity >=50 || capacity <= 100){
+    else if (capacity >= 50 || capacity <= 100) {
         score = score + 2;
     }
-    else if(capacity >=100 || capacity <= 200){
+    else if (capacity >= 100 || capacity <= 200) {
         score = score + 4;
     }
-    else if(capacity >=200 || capacity <= 300){
+    else if (capacity >= 200 || capacity <= 300) {
         score = score + 8;
     }
-    else{
+    else {
         score = score + 16;
     }
 
     // console.log(score + "Score");
     document.getElementById("score").innerHTML = score;
-    
+
 }
 //////////////////////////////////////////////////////////////////
 
@@ -101,76 +149,76 @@ function quizGenerator() {
     var rid = Math.round(Math.random() * 10);
     // var rid = 3;
     // console.log(rid);
-    
+
     switch (rid) {
         case 0:
-        xiv = ans;
-        console.log("Xiv");
-        break;
-        
+            xiv = ans;
+            console.log("Xiv");
+            break;
+
         case 1:
-        xi = ans;
-        xii = ans * 3; xiii = ans + 9; xiv = ans * 5; xv = ans - 7;
-        console.log("Xi");
-        break;
+            xi = ans;
+            xii = ans * 3; xiii = ans + 9; xiv = ans * 5; xv = ans - 7;
+            console.log("Xi");
+            break;
         case 2:
-        xii = ans;
-        xi = ans * 3; xiii = ans + 9; xiv = ans * 5; xv = ans - 7;
-        console.log("Xii");
-        break;
+            xii = ans;
+            xi = ans * 3; xiii = ans + 9; xiv = ans * 5; xv = ans - 7;
+            console.log("Xii");
+            break;
         case 3:
-        console.log("Xiii");
-        xiii = ans;
-        xii = ans * 3; xi = ans + 9; xiv = ans * 5; xv = ans - 7;
-        break;
+            console.log("Xiii");
+            xiii = ans;
+            xii = ans * 3; xi = ans + 9; xiv = ans * 5; xv = ans - 7;
+            break;
         case 4:
-        xiv = ans;
-        xii = ans * 3; xiii = ans + 9; xi = ans * 5; xv = ans - 7;
-        console.log("Xiv");
-        break;
+            xiv = ans;
+            xii = ans * 3; xiii = ans + 9; xi = ans * 5; xv = ans - 7;
+            console.log("Xiv");
+            break;
         case 5:
-        console.log("Xv");
-        xv = ans;
-        xii = ans * 3; xiii = ans + 9; xiv = ans * 5; xi = ans - 7;
-        break;
+            console.log("Xv");
+            xv = ans;
+            xii = ans * 3; xiii = ans + 9; xiv = ans * 5; xi = ans - 7;
+            break;
         case 6:
-        console.log("Xv");
-        xv = ans;
-        xii = ans * 3; xiii = ans + 9; xiv = ans * 5; xi = ans - 7;
-        break;
+            console.log("Xv");
+            xv = ans;
+            xii = ans * 3; xiii = ans + 9; xiv = ans * 5; xi = ans - 7;
+            break;
         case 7:
-        console.log("Xiv");
-        xiv = ans;
-        xii = ans * 3; xiii = ans + 9; xi = ans * 5; xv = ans - 7;
-        break;
+            console.log("Xiv");
+            xiv = ans;
+            xii = ans * 3; xiii = ans + 9; xi = ans * 5; xv = ans - 7;
+            break;
         case 8:
-        console.log("Xiii");
-        xiii = ans;
-        xii = ans * 3; xi = ans + 9; xiv = ans * 5; xv = ans - 7;
-        break;
+            console.log("Xiii");
+            xiii = ans;
+            xii = ans * 3; xi = ans + 9; xiv = ans * 5; xv = ans - 7;
+            break;
         case 9:
-        console.log("Xii");
-        xii = ans;
+            console.log("Xii");
+            xii = ans;
             xi = ans * 3; xiii = ans + 9; xiv = ans * 5; xv = ans - 7;
             break;
-            case 10:
+        case 10:
             console.log("Xi");
             xi = ans;
             xii = ans * 3; xiii = ans + 9; xiv = ans * 5; xv = ans - 7;
             break;
-            default:
+        default:
             console.log("Error in generating Buttons");
-            
-        }
-        
-        console.log("Xi" + " " + xi);
-        console.log("Xii" + " " + xii);
-        console.log("Xiii" + " " + xiii);
-        console.log("Xiv" + " " + xiv);
-        console.log("Xv" + " " + xv);
-        
+
     }
-    
+
+    console.log("Xi" + " " + xi);
+    console.log("Xii" + " " + xii);
+    console.log("Xiii" + " " + xiii);
+    console.log("Xiv" + " " + xiv);
+    console.log("Xv" + " " + xv);
+
+}
+
 //////////////////////////////////////////////////////////////////////////////////
 
 //////////////....................QuizStarter.............../////////////////////
@@ -199,20 +247,20 @@ function start() {
             levelFlag = levelFlag + 1;
         }
     }
-    
+
     document.getElementById("level").innerHTML = level;
     document.getElementById("result").innerHTML = "";
     document.getElementById("correctAns").innerHTML = "";
     document.getElementById("displayButton").innerHTML = "";
-    
+
     document.getElementById("quizHeadingX").innerHTML = "Quiz!";
     document.getElementById("quizHeadingXi").innerHTML = "Choose right one!";
-    
-    
+
+
     questionDraw();
     quizGenerator();
-    
-    
+
+
     var btnContainer = document.getElementById("displayButton");
     var chooseBtn = document.createElement("input");
     chooseBtn.setAttribute("type", "button");
@@ -221,57 +269,57 @@ function start() {
     chooseBtn.setAttribute("value", xi);
     chooseBtn.setAttribute("onClick", "result(" + xi + ")");
     btnContainer.appendChild(chooseBtn);
-    
-    
-    
-    
+
+
+
+
     var btnContainer = document.getElementById("displayButton");
     var chooseBtn = document.createElement("input");
     chooseBtn.setAttribute("type", "button");
     chooseBtn.setAttribute("id", xii);
     chooseBtn.setAttribute("class", "quizBtn w3-button w3-block w3-white w3-border w3-border-red w3-round-large");
     chooseBtn.setAttribute("value", xii);
-        chooseBtn.setAttribute("onClick", "result(" + xii + ")");
-        btnContainer.appendChild(chooseBtn);
-        // var lineBreak = document.createElement("br");
-        // btnContainer.appendChild(lineBreak);
-        
-        var btnContainer = document.getElementById("displayButton");
-        var chooseBtn = document.createElement("input");
-        chooseBtn.setAttribute("type", "button");
-        chooseBtn.setAttribute("id", xiii);
-        chooseBtn.setAttribute("class", "quizBtn w3-button w3-block w3-white w3-border w3-border-red w3-round-large");
-        chooseBtn.setAttribute("value", xiii);
-        chooseBtn.setAttribute("onClick", "result(" + xiii + ")");
-        btnContainer.appendChild(chooseBtn);
-        
-        var btnContainer = document.getElementById("displayButton");
-        var chooseBtn = document.createElement("input");
-        chooseBtn.setAttribute("type", "button");
-        chooseBtn.setAttribute("id", xiv);
-        chooseBtn.setAttribute("class", "quizBtn w3-button w3-block w3-white w3-border w3-border-red w3-round-large");
-        chooseBtn.setAttribute("value", xiv);
-        chooseBtn.setAttribute("onClick", "result(" + xiv + ")");
-        btnContainer.appendChild(chooseBtn);
-        // var lineBreak = document.createElement("br");
-        // btnContainer.appendChild(lineBreak);
-        
-        var btnContainer = document.getElementById("displayButton");
-        var chooseBtn = document.createElement("input");
-        chooseBtn.setAttribute("type", "button");
-        chooseBtn.setAttribute("id", xv);
-        chooseBtn.setAttribute("class", "quizBtn w3-button w3-block w3-white w3-border w3-border-red w3-round-large");
-        chooseBtn.setAttribute("value", xv);
-        chooseBtn.setAttribute("onClick", "result(" + xv + ")");
-        btnContainer.appendChild(chooseBtn);
-        
-    }
-    
-    ///////////////////////////////////////////////////////////////////////////
+    chooseBtn.setAttribute("onClick", "result(" + xii + ")");
+    btnContainer.appendChild(chooseBtn);
+    // var lineBreak = document.createElement("br");
+    // btnContainer.appendChild(lineBreak);
 
-    //////////////............ResultChecker.....................//////////////
-    function result(y) {
-        var x = document.getElementById(y).value;
+    var btnContainer = document.getElementById("displayButton");
+    var chooseBtn = document.createElement("input");
+    chooseBtn.setAttribute("type", "button");
+    chooseBtn.setAttribute("id", xiii);
+    chooseBtn.setAttribute("class", "quizBtn w3-button w3-block w3-white w3-border w3-border-red w3-round-large");
+    chooseBtn.setAttribute("value", xiii);
+    chooseBtn.setAttribute("onClick", "result(" + xiii + ")");
+    btnContainer.appendChild(chooseBtn);
+
+    var btnContainer = document.getElementById("displayButton");
+    var chooseBtn = document.createElement("input");
+    chooseBtn.setAttribute("type", "button");
+    chooseBtn.setAttribute("id", xiv);
+    chooseBtn.setAttribute("class", "quizBtn w3-button w3-block w3-white w3-border w3-border-red w3-round-large");
+    chooseBtn.setAttribute("value", xiv);
+    chooseBtn.setAttribute("onClick", "result(" + xiv + ")");
+    btnContainer.appendChild(chooseBtn);
+    // var lineBreak = document.createElement("br");
+    // btnContainer.appendChild(lineBreak);
+
+    var btnContainer = document.getElementById("displayButton");
+    var chooseBtn = document.createElement("input");
+    chooseBtn.setAttribute("type", "button");
+    chooseBtn.setAttribute("id", xv);
+    chooseBtn.setAttribute("class", "quizBtn w3-button w3-block w3-white w3-border w3-border-red w3-round-large");
+    chooseBtn.setAttribute("value", xv);
+    chooseBtn.setAttribute("onClick", "result(" + xv + ")");
+    btnContainer.appendChild(chooseBtn);
+
+}
+
+///////////////////////////////////////////////////////////////////////////
+
+//////////////............ResultChecker.....................//////////////
+function result(y) {
+    var x = document.getElementById(y).value;
     x = Number(x);
     if (x === ans) {
         // alert("ConditionPassed");
@@ -283,7 +331,7 @@ function start() {
         // var correct=document.getElementById(ans);
         // correct.setAttribute("class", "quizBtnX w3-button w3-block w3-white w3-border w3-border-red w3-round-large");
         document.getElementById("result").innerHTML = "Incorrect";
-        document.getElementById("correctAns").innerHTML ="Correct = " + ans;
+        document.getElementById("correctAns").innerHTML = "Correct = " + ans;
         // alert("ConditionFailed");
         chance();
     }
@@ -316,7 +364,7 @@ function levelUpdate() {
         capacity = capacity + 250;
     }
     console.log(level + ' level');
-    
+
 }
 
 
@@ -324,25 +372,25 @@ function levelUpdate() {
 
 /////////////...........ChanceController...........///////////////
 var userChances = 3;
-function chance(){
-    if(userChances > 0){
+function chance() {
+    if (userChances > 0) {
         userChances = userChances - 1;
         document.getElementById("chanceDisplay").innerHTML = userChances;
     }
-    else{
+    else {
         //........GameOverNotice............/////
         document.getElementById("quizHeadingX").innerHTML = "";
         document.getElementById("quizHeadingXi").innerHTML = "";
-        var screen = document.getElementById("displayQuiz").innerHTML= "Game Over!";
+        var screen = document.getElementById("displayQuiz").innerHTML = "Game Over!";
         // screen.innerHTML = "";
         // var endNode = document.createElement("p");
         // endNode.setAttribute("class", "endNote");
         // var endNote = document.createTextNode("Game Over!!");
         // endNode.appendChild(endNote);
         // screen.appendChild(endNode);
-        
+
         ////......ReStartButton.........../////////////
-        
+
         var endBtns = document.getElementById("displayButton");
         endBtns.innerHTML = "";
         var reStartbtn = document.createElement("input");
@@ -353,7 +401,7 @@ function chance(){
         reStartbtn.setAttribute("onclick", "removeStartBtn()");
         reStartbtn.setAttribute("onclick", "reStart()");
         endBtns.appendChild(reStartbtn);
-        
+
         ////////........Menubtn.......................///////////
         var menuAddress = document.createElement("a");
         menuAddress.setAttribute("href", "../index.html");
@@ -374,7 +422,7 @@ function chance(){
 /////////////////////////////////////////////////////////////////
 
 ///////////.........Re-Start....................///////////////
-function reStart(){
+function reStart() {
     userChances = 3;
     score = 0;
     level = 1;
